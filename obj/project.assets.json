@@ -27,19 +27,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\musta\\.nuget\\packages\\": {}
+    "/home/musta/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\dotnet\\DotnetPlayground.csproj",
+      "projectUniqueName": "/mnt/d/dotnet/DotnetPlayground.csproj",
       "projectName": "DotnetPlayground",
-      "projectPath": "D:\\dotnet\\DotnetPlayground.csproj",
-      "packagesPath": "C:\\Users\\musta\\.nuget\\packages\\",
-      "outputPath": "D:\\dotnet\\obj\\",
+      "projectPath": "/mnt/d/dotnet/DotnetPlayground.csproj",
+      "packagesPath": "/home/musta/.nuget/packages/",
+      "outputPath": "/mnt/d/dotnet/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\musta\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/home/musta/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
@@ -51,8 +51,8 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "D:\\dotnet\\1_RecordTypes\\RecordTypes.csproj": {
-              "projectPath": "D:\\dotnet\\1_RecordTypes\\RecordTypes.csproj"
+            "/mnt/d/dotnet/1_RecordTypes/RecordTypes.csproj": {
+              "projectPath": "/mnt/d/dotnet/1_RecordTypes/RecordTypes.csproj"
             }
           }
         }
@@ -88,7 +88,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/home/musta/.dotnet/sdk/9.0.306/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

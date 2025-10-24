@@ -8,19 +8,19 @@
     "net9.0": []
   },
   "packageFolders": {
-    "C:\\Users\\musta\\.nuget\\packages\\": {}
+    "/home/musta/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\dotnet\\1_RecordTypes\\RecordTypes.csproj",
+      "projectUniqueName": "/mnt/d/dotnet/1_RecordTypes/RecordTypes.csproj",
       "projectName": "RecordTypes",
-      "projectPath": "D:\\dotnet\\1_RecordTypes\\RecordTypes.csproj",
-      "packagesPath": "C:\\Users\\musta\\.nuget\\packages\\",
-      "outputPath": "D:\\dotnet\\1_RecordTypes\\obj\\",
+      "projectPath": "/mnt/d/dotnet/1_RecordTypes/RecordTypes.csproj",
+      "packagesPath": "/home/musta/.nuget/packages/",
+      "outputPath": "/mnt/d/dotnet/1_RecordTypes/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\musta\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/home/musta/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
@@ -65,7 +65,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/home/musta/.dotnet/sdk/9.0.306/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
