@@ -7,6 +7,9 @@ Bu konu C#'ta tam sayılar ve ondalıklı sayılarla çalışmayı özetler:
 - Bölme işlemlerinde bölüm ve kalan hesaplama
 - `int.MinValue`/`int.MaxValue` ile sınırları ve taşmayı inceleme
 - `double` türünün aralığını ve yuvarlama hatalarını görselleştirme
+- `decimal` ile finansal hesaplarda hassas sonuçlar üretme
+- `Math` yardımcılarıyla trigonometrik ve kök hesapları yapma
+- `checked`/`unchecked` bloklarıyla taşma davranışını kontrol etme
 
 Dersi tek başına denemek için:
 

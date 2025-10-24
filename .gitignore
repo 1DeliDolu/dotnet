@@ -1,0 +1,19 @@
+## TODO
+TODO.md
+AGENT.md
+## Build outputs
+[Bb]in/
+[Oo]bj/
+
+## IDE and tooling
+.vs/
+*.user
+*.userosscache
+*.suo
+*.userprefs
+*.csproj.user
+
+## Misc
+*.log
+*.DS_Store
+*.swp

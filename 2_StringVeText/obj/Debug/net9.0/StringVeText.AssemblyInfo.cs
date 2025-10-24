@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("StringVeText")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dc63d8b3875f10c40df82415dc761bbf7fd3da24")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ec4b87874540ea4eea99c4346f6f0f7b729b917e")]
 [assembly: System.Reflection.AssemblyProductAttribute("StringVeText")]
 [assembly: System.Reflection.AssemblyTitleAttribute("StringVeText")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

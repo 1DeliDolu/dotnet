@@ -2,6 +2,16 @@
   "version": 3,
   "targets": {
     "net9.0": {
+      "ListCollections/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/ListCollections.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ListCollections.dll": {}
+        }
+      },
       "NumericTypes/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
@@ -22,6 +32,16 @@
           "bin/placeholder/RecordTypes.dll": {}
         }
       },
+      "SartlarVeDonguler/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/SartlarVeDonguler.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SartlarVeDonguler.dll": {}
+        }
+      },
       "StringVeText/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
@@ -35,6 +55,11 @@
     }
   },
   "libraries": {
+    "ListCollections/1.0.0": {
+      "type": "project",
+      "path": "5_ListCollections/ListCollections.csproj",
+      "msbuildProject": "5_ListCollections/ListCollections.csproj"
+    },
     "NumericTypes/1.0.0": {
       "type": "project",
       "path": "3_NumericTypes/NumericTypes.csproj",
@@ -45,6 +70,11 @@
       "path": "1_RecordTypes/RecordTypes.csproj",
       "msbuildProject": "1_RecordTypes/RecordTypes.csproj"
     },
+    "SartlarVeDonguler/1.0.0": {
+      "type": "project",
+      "path": "4_SartlarVeDonguler/SartlarVeDonguler.csproj",
+      "msbuildProject": "4_SartlarVeDonguler/SartlarVeDonguler.csproj"
+    },
     "StringVeText/1.0.0": {
       "type": "project",
       "path": "2_StringVeText/StringVeText.csproj",
@@ -53,8 +83,10 @@
   },
   "projectFileDependencyGroups": {
     "net9.0": [
+      "ListCollections >= 1.0.0",
       "NumericTypes >= 1.0.0",
       "RecordTypes >= 1.0.0",
+      "SartlarVeDonguler >= 1.0.0",
       "StringVeText >= 1.0.0"
     ]
   },
@@ -91,6 +123,12 @@
             },
             "/mnt/d/dotnet/3_NumericTypes/NumericTypes.csproj": {
               "projectPath": "/mnt/d/dotnet/3_NumericTypes/NumericTypes.csproj"
+            },
+            "/mnt/d/dotnet/4_SartlarVeDonguler/SartlarVeDonguler.csproj": {
+              "projectPath": "/mnt/d/dotnet/4_SartlarVeDonguler/SartlarVeDonguler.csproj"
+            },
+            "/mnt/d/dotnet/5_ListCollections/ListCollections.csproj": {
+              "projectPath": "/mnt/d/dotnet/5_ListCollections/ListCollections.csproj"
             }
           }
         }

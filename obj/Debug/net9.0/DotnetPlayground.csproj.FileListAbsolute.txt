@@ -40,3 +40,7 @@ D:/dotnet/obj/Debug/net9.0/ref/DotnetPlayground.dll
 /mnt/d/dotnet/bin/Debug/net9.0/StringVeText.pdb
 /mnt/d/dotnet/bin/Debug/net9.0/NumericTypes.dll
 /mnt/d/dotnet/bin/Debug/net9.0/NumericTypes.pdb
+/mnt/d/dotnet/bin/Debug/net9.0/SartlarVeDonguler.dll
+/mnt/d/dotnet/bin/Debug/net9.0/SartlarVeDonguler.pdb
+/mnt/d/dotnet/bin/Debug/net9.0/ListCollections.dll
+/mnt/d/dotnet/bin/Debug/net9.0/ListCollections.pdb

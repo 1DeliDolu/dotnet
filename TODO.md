@@ -1,223 +1,148 @@
-C# if statements and loops - conditional logic tutorial
-03/12/2025
-This tutorial teaches you how to write C# code that examines variables and changes the execution path based on those variables. You write C# code and see the results of compiling and running it. The tutorial contains a series of lessons that explore branching and looping constructs in C#. These lessons teach you the fundamentals of the C# language.
+# TODO
 
+- [x] Learn to manage data collections using List<T> in C# → `5_ListCollections`
+
+---
+
+Learn to manage data collections using List<T> in C#
+07/10/2025
+This introductory tutorial provides an introduction to the C# language and the basics of the class.
+
+This tutorial teaches you C# interactively, using your browser to write C# code and see the results of compiling and running your code. It contains a series of lessons that create, modify, and explore collections and arrays. You work primarily with the List<T> class.
+
+A basic list example
  Tip
 
 When a code snippet block includes the "Run" button, that button opens the interactive window, or replaces the existing code in the interactive window. When the snippet doesn't include a "Run" button, you can copy the code and add it to the current interactive window.
 
-Run the following code in the interactive window. Select Run:
+Run the following code in the interactive window. Replace <name> with your name and select Run:
 
 C#
 
 Copy
 
 Run
-int a = 5;
-int b = 6;
-if (a + b > 10)
-    Console.WriteLine("The answer is greater than 10.");
-Modify the declaration of b so that the sum is less than 10:
-
-C#
-
-Copy
-int b = 3;
-Select the Run button again. Because the answer is less than 10, nothing is printed. The condition you're testing is false. You don't have any code to execute because you only wrote one of the possible branches for an if statement: the true branch.
-
- Tip
-
-As you explore C# (or any programming language), you make mistakes when you write code. The compiler finds those errors and report them to you. When the output contains error messages, look closely at the example code, and the code in the interactive window to see what to fix. That exercise helps you learn the structure of C# code.
-
-This first sample shows the power of if and boolean types. A boolean is a variable that can have one of two values: true or false. C# defines a special type, bool for boolean variables. The if statement checks the value of a bool. When the value is true, the statement following the if executes. Otherwise, it's skipped.
-
-This process of checking conditions and executing statements based on those conditions is powerful. Let's explore more.
-
-Make if and else work together
-To execute different code in both the true and false branches, you create an else branch that executes when the condition is false. Try the following code:
-
-C#
-
-Copy
-
-Run
-int a = 5;
-int b = 3;
-if (a + b > 10)
-    Console.WriteLine("The answer is greater than 10");
-else
-    Console.WriteLine("The answer is not greater than 10");
-The statement following the else keyword executes only when the condition being tested is false. Combining if and else with boolean conditions provides all the power you need.
-
- Important
-
-The indentation under the if and else statements is for human readers. The C# language doesn't treat indentation or white space as significant. The statement following the if or else keyword executes based on the condition. All the samples in this tutorial follow a common practice to indent lines based on the control flow of statements.
-
-Because indentation isn't significant, you need to use { and } to indicate when you want more than one statement to be part of the block that executes conditionally. C# programmers typically use those braces on all if and else clauses. The following example is the same as what you created. Try it.
-
-C#
-
-Copy
-int a = 5;
-int b = 3;
-if (a + b > 10)
+List<string> names = ["<name>", "Ana", "Felipe"];
+foreach (var name in names)
 {
-    Console.WriteLine("The answer is greater than 10");
+    Console.WriteLine($"Hello {name.ToUpper()}!");
 }
-else
-{
-    Console.WriteLine("The answer is not greater than 10");
-}
- Tip
+You created a list of strings, added three names to that list, and printed the names in all CAPS. You're using concepts that you learned in earlier tutorials to loop through the list.
 
-Through the rest of this tutorial, the code samples all include the braces, following accepted practices.
+The code to display names makes use of the string interpolation feature. When you precede a string with the $ character, you can embed C# code in the string declaration. The actual string replaces that C# code with the value it generates. In this example, it replaces the {name.ToUpper()} with each name, converted to capital letters, because you called the String.ToUpper method.
 
-You can test more complicated conditions:
+Let's keep exploring.
+
+Modify list contents
+The collection you created uses the List<T> type. This type stores sequences of elements. You specify the type of the elements between the angle brackets.
+
+One important aspect of this List<T> type is that it can grow or shrink, enabling you to add or remove elements. You can see the results by modifying the contents after you displayed its contents. Add the following code after the code you already wrote (the loop that prints the contents):
 
 C#
 
 Copy
-int a = 5;
-int b = 3;
-int c = 4;
-if ((a + b + c > 10) && (a == b))
+Console.WriteLine();
+names.Add("Maria");
+names.Add("Bill");
+names.Remove("Ana");
+foreach (var name in names)
 {
-    Console.WriteLine("The answer is greater than 10");
-    Console.WriteLine("And the first number is equal to the second");
+    Console.WriteLine($"Hello {name.ToUpper()}!");
+}
+You added two more names to the end of the list. You also removed one as well. The output from this block of code shows the initial contents, then prints a blank line and the new contents.
+
+The List<T> enables you to reference individual items by index as well. You access items using the [ and ] tokens. Add the following code after what you already wrote and try it:
+
+C#
+
+Copy
+Console.WriteLine($"My name is {names[0]}.");
+Console.WriteLine($"I've added {names[2]} and {names[3]} to the list.");
+You're not allowed to access past the end of the list. You can check how long the list is using the Count property. Add the following code:
+
+C#
+
+Copy
+Console.WriteLine($"The list has {names.Count} people in it");
+Select Run again to see the results. In C#, indices start at 0, so the largest valid index is one less than the number of items in the list.
+
+For more information about indices, see the Explore indexes and ranges article.
+
+Search and sort lists
+Our samples use relatively small lists, but your applications might often create lists with many more elements, sometimes numbering in the thousands. To find elements in these larger collections, you need to search the list for different items. The IndexOf method searches for an item and returns the index of the item. If the item isn't in the list, IndexOf returns -1. Try it to see how it works. Add the following code after what you wrote so far:
+
+C#
+
+Copy
+var index = names.IndexOf("Felipe");
+if (index == -1)
+{
+    Console.WriteLine($"When an item is not found, IndexOf returns {index}");
 }
 else
 {
-    Console.WriteLine("The answer is not greater than 10");
-    Console.WriteLine("Or the first number is not equal to the second");
+    Console.WriteLine($"The name {names[index]} is at index {index}");
 }
-The == symbol tests for equality. Using == distinguishes the test for equality from assignment, which you saw in a = 5.
 
-The && represents "and". It means both conditions must be true to execute the statement in the true branch. These examples also show that you can have multiple statements in each conditional branch, provided you enclose them in { and }.
+index = names.IndexOf("Not Found");
+if (index == -1)
+{
+    Console.WriteLine($"When an item is not found, IndexOf returns {index}");
+}
+else
+{
+    Console.WriteLine($"The name {names[index]} is at index {index}");
+}
+You might not know if an item is in the list, so you should always check the index returned by IndexOf. If it's -1, the item wasn't found.
 
-You can also use || to represent "or":
+The items in your list can be sorted as well. The Sort method sorts all the items in the list in their normal order (alphabetically for strings). Add this code and run again:
 
 C#
 
 Copy
-if ((a + b + c > 10) || (a == b))
-Modify the values of a, b, and c and switch between && and || to explore. You gain more understanding of how the && and || operators work.
-
-Use loops to repeat operations
-Another important concept to create larger programs is loops. You use loops to repeat statements that you want executed more than once. Try this code in the interactive window:
+names.Sort();
+foreach (var name in names)
+{
+    Console.WriteLine($"Hello {name.ToUpper()}!");
+}
+Lists of other types
+You've been using the string type in lists so far. Let's make a List<T> using a different type. Let's build a set of numbers. Delete the code you wrote so far, and replace it with the following code:
 
 C#
 
 Copy
 
 Run
-int counter = 0;
-while (counter < 10)
-{
-    Console.WriteLine($"Hello World! The counter is {counter}");
-    counter++;
-}
-The while statement checks a condition and executes the statement following the while. It repeats checking the condition and executing those statements until the condition is false.
-
-There's one other new operator in this example. The ++ after the counter variable is the increment operator. It adds 1 to the value of counter, and stores that value in the counter variable.
-
- Important
-
-Make sure that the while loop condition does switch to false as you execute the code. Otherwise, you create an infinite loop where your program never ends. Let's not demonstrate that, because the engine that runs your code times out and you see no output from your program.
-
-The while loop tests the condition before executing the code following the while. The do ... while loop executes the code first, and then checks the condition. It looks like this:
+List<int> fibonacciNumbers = [1, 1];
+That creates a list of integers, and sets the first two integers to the value 1. The Fibonacci Sequence, a sequence of numbers, starts with two 1's. Each next Fibonacci number is found by taking the sum of the previous two numbers. Add this code:
 
 C#
 
 Copy
-int counter = 0;
-do
+var previous = fibonacciNumbers[fibonacciNumbers.Count - 1];
+var previous2 = fibonacciNumbers[fibonacciNumbers.Count - 2];
+
+fibonacciNumbers.Add(previous + previous2);
+
+foreach (var item in fibonacciNumbers)
 {
-    Console.WriteLine($"Hello World! The counter is {counter}");
-    counter++;
-} while (counter < 10);
-This do loop and the earlier while loop work the same.
-
-Let's move on to one last loop statement.
-
-Work with the for loop
-Another common loop statement that you see in C# code is the for loop. Try this code in the interactive window:
-
-C#
-
-Copy
-
-Run
-for (int counter = 0; counter < 10; counter++)
-{
-    Console.WriteLine($"Hello World! The counter is {counter}");
+    Console.WriteLine(item);
 }
-The preceding for loop does the same work as the while loop and the do loop you already used. The for statement has three parts that control how it works:
+Press Run to see the results.
 
-The first part is the for initializer: int counter = 0; declares that counter is the loop variable, and sets its initial value to 0.
-The middle part is the for condition: counter < 10 declares that this for loop continues to execute as long as the value of counter is less than 10.
-The final part is the for iterator: counter++ specifies how to modify the loop variable after executing the block following the for statement. Here, it specifies that counter increments by 1 each time the block executes.
-Experiment with these conditions yourself. Try each of the following changes:
-
-Change the initializer to start at a different value.
-Change the condition to stop at a different value.
-When you're done, let's move on to write some code yourself to use what you learned.
-
-There's one other looping statement that isn't covered in this tutorial: the foreach statement. The foreach statement repeats its statement for every item in a sequence of items. It's most often used with collections. It's covered in the next tutorial.
-
-Created nested loops
-A while, do, or for loop can be nested inside another loop to create a matrix using the combination of each item in the outer loop with each item in the inner loop. Let's do that to build a set of alphanumeric pairs to represent rows and columns.
-
-One for loop can generate the rows:
-
-C#
-
-Copy
-
-Run
-for (int row = 1; row < 11; row++)
-{
-    Console.WriteLine($"The row is {row}");
-}
-Another loop can generate the columns:
-
-C#
-
-Copy
-for (char column = 'a'; column < 'k'; column++)
-{
-    Console.WriteLine($"The column is {column}");
-}
-You can nest one loop inside the other to form pairs:
-
-C#
-
-Copy
-for (int row = 1; row < 11; row++)
-{
-    for (char column = 'a'; column < 'k'; column++)
-    {
-        Console.WriteLine($"The cell is ({row}, {column})");
-    }
-}
-You can see that the outer loop increments once for each full run of the inner loop. Reverse the row and column nesting, and see the changes for yourself.
-
-Combine branches and loops
-Now that you saw the if statement and the looping constructs in the C# language, see if you can write C# code to find the sum of all integers 1 through 20 that are divisible by 3. Here are a few hints:
-
-The % operator gives you the remainder of a division operation.
-The if statement gives you the condition to see if a number should be part of the sum.
-The for loop can help you repeat a series of steps for all the numbers 1 through 20.
-Try it yourself. Then check how you did. As a hint, you should get 63 for an answer.
+Challenge
+See if you can put together some of the concepts from this and earlier lessons. Expand on what you built so far with Fibonacci Numbers. Try to write the code to generate the first 20 numbers in the sequence. (As a hint, the 20th Fibonacci number is 6765.)
 
 Did you come up with something like this?
 
 Details
-You completed the "branches and loops" interactive tutorial. You can select the list collection link to start the next interactive tutorial, or you can visit the .NET site to download the .NET SDK, create a project on your machine, and keep coding. The "Next steps" section brings you back to these tutorials.
+You completed the list interactive tutorial, the final introduction to C# interactive tutorial. You can visit the .NET site to download the .NET SDK, create a project on your machine, and keep coding. The "Next steps" section brings you back to these tutorials. Or, you can continue with the Explore object oriented programming with classes and objects tutorial.
 
-You can learn more about these concepts in these articles:
+You can learn more about .NET collections in the following articles:
 
-Selection statements
-Iteration statements
+Selecting a collection type
+Commonly used collection types
+When to use generic collections
  Collaborate with us on GitHub
 The source for this content can be found on GitHub, where you can also create and review issues and pull requests. For more information, see our contributor guide.
 
@@ -230,9 +155,9 @@ The source for this content can be found on GitHub, where you can also create an
 Additional resources
 Documentation
 
-Data collections - Introductory interactive tutorial - A tour of C#
+Branches and loops - Introductory tutorial - A tour of C#
 
-In this tutorial, you use your browser to learn about C# collections. You write C# code and see the results of compiling and running your code directly in the browser.
+In this tutorial about branches and loops, you write C# code to explore the language syntax that supports conditional branches and loops to execute statements repeatedly. You write C# code and see the results of compiling and running your code directly in the browser.
 
 Pattern matching - A tour of C#
 
@@ -245,11 +170,17 @@ In this tutorial about creating types, you use your browser to learn C# interact
 Show 5 more
 Training
 
-Learning path
+Module
 
-Add logic to C# console applications (Get started with C#, Part 3) - Training
+Implement Collection Types - Training
 
-Deepen your experience with C# logic and iteration statements, Boolean expressions, and code blocks in this Learning Path.
+Learn, to use C# tools for managing groups of objects dynamically, ensuring type safety and efficient data manipulation.
+
+Certification
+
+Microsoft Certified: Azure Developer Associate - Certifications
+
+Build end-to-end solutions in Microsoft Azure to create Azure Functions, implement and manage web apps, develop solutions utilizing Azure storage, and more.
 
 Events
 
@@ -260,3 +191,8 @@ Oct 24, 6 PM - Oct 24, 6 PM
 .NET 10 launches at .NET Conf 2025! Tune in with the .NET community to celebrate and learn about the new release on November 11 - 13.
 
 Save the date
+# TODO
+
+- [x] Learn to manage data collections using List<T> in C# → `5_ListCollections`
+
+---

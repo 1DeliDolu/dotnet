@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using D1_RecordTypesNamespace;
 using D2_StringVeTextNamespace;
 using D3_NumericTypesNamespace;
+using D4_SartlarVeDongulerNamespace;
+using D5_ListCollectionsNamespace;
 
 namespace DotnetPlayground;
 
@@ -13,7 +15,9 @@ internal static class Program
         {
             ("1", "Record-Typen", RecordTypesTopic.Run),
             ("2", "String und Text", StringVeTextTopic.Run),
-            ("3", "Zahlen und numerische Typen", NumericTypesTopic.Run)
+            ("3", "Zahlen und numerische Typen", NumericTypesTopic.Run),
+            ("4", "Bedingungen und Schleifen", SartlarVeDongulerTopic.Run),
+            ("5", "Listen und Collections", ListCollectionsTopic.Run)
         };
 
     private static void Main(string[] args)

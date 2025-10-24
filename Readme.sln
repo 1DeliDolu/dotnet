@@ -8,6 +8,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringVeText", "2_StringVeT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NumericTypes", "3_NumericTypes\NumericTypes.csproj", "{4D6F4EE7-5DAA-4CA6-8BE5-4BB5AC8FAEFA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SartlarVeDonguler", "4_SartlarVeDonguler\SartlarVeDonguler.csproj", "{46E3A4AF-4CC0-4F23-8C0E-1D12AF0B7F0A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListCollections", "5_ListCollections\ListCollections.csproj", "{AC0F1D23-A34E-4F1B-8F66-73BCEC3D4E56}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotnetPlayground", "DotnetPlayground.csproj", "{3234A00F-EB80-430E-873D-0FD00653C36F}"
 EndProject
 Global
@@ -28,6 +32,14 @@ Global
 		{4D6F4EE7-5DAA-4CA6-8BE5-4BB5AC8FAEFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D6F4EE7-5DAA-4CA6-8BE5-4BB5AC8FAEFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4D6F4EE7-5DAA-4CA6-8BE5-4BB5AC8FAEFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46E3A4AF-4CC0-4F23-8C0E-1D12AF0B7F0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46E3A4AF-4CC0-4F23-8C0E-1D12AF0B7F0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46E3A4AF-4CC0-4F23-8C0E-1D12AF0B7F0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46E3A4AF-4CC0-4F23-8C0E-1D12AF0B7F0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC0F1D23-A34E-4F1B-8F66-73BCEC3D4E56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC0F1D23-A34E-4F1B-8F66-73BCEC3D4E56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC0F1D23-A34E-4F1B-8F66-73BCEC3D4E56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC0F1D23-A34E-4F1B-8F66-73BCEC3D4E56}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3234A00F-EB80-430E-873D-0FD00653C36F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3234A00F-EB80-430E-873D-0FD00653C36F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3234A00F-EB80-430E-873D-0FD00653C36F}.Release|Any CPU.ActiveCfg = Release|Any CPU

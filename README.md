@@ -3,6 +3,8 @@
 1. [Record-Typen in C#](1_RecordTypes/README.md)
 2. [String ve Text](2_StringVeText/README.md)
 3. [Sayılar ve Numerik Türler](3_NumericTypes/README.md)
+4. [Şartlar ve Döngüler](4_SartlarVeDonguler/README.md)
+5. [List Koleksiyonları](5_ListCollections/README.md)
 
 ## WSL 2 ile çalıştırma
 

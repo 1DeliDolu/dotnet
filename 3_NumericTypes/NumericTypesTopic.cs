@@ -1,4 +1,5 @@
 using System;
+using System.Globalization;
 
 namespace D3_NumericTypesNamespace;
 
@@ -10,6 +11,9 @@ public static class NumericTypesTopic
         ShowOrderOfOperations();
         ShowRemainderAndLimits();
         ShowDoubleMath();
+        ShowDecimalPrecision();
+        ShowMathHelpers();
+        ShowCheckedOverflow();
     }
 
     private static void ShowIntegerMath()
@@ -81,6 +85,73 @@ public static class NumericTypesTopic
 
         var third = 1.0 / 3.0;
         Console.WriteLine($"1/3 ≈ {third}");
+        Console.WriteLine();
+    }
+
+    private static void ShowDecimalPrecision()
+    {
+        Console.WriteLine("double vs decimal hassasiyeti:");
+
+        var doubleSum = 0.1 + 0.2;
+        var decimalSum = 0.1m + 0.2m;
+        Console.WriteLine($"double 0.1 + 0.2 = {doubleSum:R}");
+        Console.WriteLine($"decimal 0.1 + 0.2 = {decimalSum}");
+
+        const decimal price = 199.99m;
+        const decimal taxRate = 0.18m;
+        var decimalTotal = price + price * taxRate;
+        var doubleTotal = (double)price + (double)price * 0.18;
+        var culture = CultureInfo.GetCultureInfo("tr-TR");
+        Console.WriteLine($"decimal toplam: {decimalTotal.ToString("C2", culture)}");
+        Console.WriteLine($"double toplam : {doubleTotal.ToString("C2", culture)}");
+
+        Console.WriteLine();
+    }
+
+    private static void ShowMathHelpers()
+    {
+        Console.WriteLine("Math yardımcıları:");
+
+        const double radius = 4.5;
+        var area = Math.PI * Math.Pow(radius, 2);
+        var circumference = 2 * Math.PI * radius;
+        Console.WriteLine($"Yarıçap {radius} → Alan: {area:F2}, Çevre: {circumference:F2}");
+
+        var diagonal = Math.Sqrt(Math.Pow(16, 2) + Math.Pow(9, 2));
+        Console.WriteLine($"16x9 dikdörtgenin köşegen uzunluğu ≈ {diagonal:F2}");
+
+        var angleDegrees = 30d;
+        var angleRadians = angleDegrees * Math.PI / 180d;
+        Console.WriteLine($"sin({angleDegrees}°) = {Math.Sin(angleRadians):F3}");
+        Console.WriteLine($"cos({angleDegrees}°) = {Math.Cos(angleRadians):F3}");
+
+        var rounded = Math.Round(2.3456, 2, MidpointRounding.AwayFromZero);
+        Console.WriteLine($"2.3456 → iki ondalık basamak: {rounded}");
+
+        Console.WriteLine();
+    }
+
+    private static void ShowCheckedOverflow()
+    {
+        Console.WriteLine("Taşmayı yönetme (checked/unchecked):");
+
+        var max = int.MaxValue;
+        try
+        {
+            var overflow = checked(max + 1);
+            Console.WriteLine($"checked sonucu: {overflow}");
+        }
+        catch (OverflowException)
+        {
+            Console.WriteLine("checked bloğu OverflowException fırlattı.");
+        }
+
+        unchecked
+        {
+            var wrap = max + 1;
+            Console.WriteLine($"unchecked sonucu (wrap): {wrap}");
+        }
+
         Console.WriteLine();
     }
 }
