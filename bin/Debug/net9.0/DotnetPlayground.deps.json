@@ -1,0 +1,39 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "DotnetPlayground/1.0.0": {
+        "dependencies": {
+          "RecordTypes": "1.0.0"
+        },
+        "runtime": {
+          "DotnetPlayground.dll": {}
+        }
+      },
+      "RecordTypes/1.0.0": {
+        "runtime": {
+          "RecordTypes.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "DotnetPlayground/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "RecordTypes/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
