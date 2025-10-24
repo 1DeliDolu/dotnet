@@ -8,19 +8,19 @@
     "net9.0": []
   },
   "packageFolders": {
-    "/home/musta/.nuget/packages/": {}
+    "C:\\Users\\musta\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/mnt/d/dotnet/2_StringVeText/StringVeText.csproj",
+      "projectUniqueName": "D:\\dotnet\\2_StringVeText\\StringVeText.csproj",
       "projectName": "StringVeText",
-      "projectPath": "/mnt/d/dotnet/2_StringVeText/StringVeText.csproj",
-      "packagesPath": "/home/musta/.nuget/packages/",
-      "outputPath": "/mnt/d/dotnet/2_StringVeText/obj/",
+      "projectPath": "D:\\dotnet\\2_StringVeText\\StringVeText.csproj",
+      "packagesPath": "C:\\Users\\musta\\.nuget\\packages\\",
+      "outputPath": "D:\\dotnet\\2_StringVeText\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/musta/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\musta\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
@@ -65,7 +65,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/home/musta/.dotnet/sdk/9.0.306/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

@@ -91,19 +91,19 @@
     ]
   },
   "packageFolders": {
-    "/home/musta/.nuget/packages/": {}
+    "C:\\Users\\musta\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/mnt/d/dotnet/DotnetPlayground.csproj",
+      "projectUniqueName": "D:\\dotnet\\DotnetPlayground.csproj",
       "projectName": "DotnetPlayground",
-      "projectPath": "/mnt/d/dotnet/DotnetPlayground.csproj",
-      "packagesPath": "/home/musta/.nuget/packages/",
-      "outputPath": "/mnt/d/dotnet/obj/",
+      "projectPath": "D:\\dotnet\\DotnetPlayground.csproj",
+      "packagesPath": "C:\\Users\\musta\\.nuget\\packages\\",
+      "outputPath": "D:\\dotnet\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/musta/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\musta\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
@@ -115,20 +115,20 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "/mnt/d/dotnet/1_RecordTypes/RecordTypes.csproj": {
-              "projectPath": "/mnt/d/dotnet/1_RecordTypes/RecordTypes.csproj"
+            "D:\\dotnet\\1_RecordTypes\\RecordTypes.csproj": {
+              "projectPath": "D:\\dotnet\\1_RecordTypes\\RecordTypes.csproj"
             },
-            "/mnt/d/dotnet/2_StringVeText/StringVeText.csproj": {
-              "projectPath": "/mnt/d/dotnet/2_StringVeText/StringVeText.csproj"
+            "D:\\dotnet\\2_StringVeText\\StringVeText.csproj": {
+              "projectPath": "D:\\dotnet\\2_StringVeText\\StringVeText.csproj"
             },
-            "/mnt/d/dotnet/3_NumericTypes/NumericTypes.csproj": {
-              "projectPath": "/mnt/d/dotnet/3_NumericTypes/NumericTypes.csproj"
+            "D:\\dotnet\\3_NumericTypes\\NumericTypes.csproj": {
+              "projectPath": "D:\\dotnet\\3_NumericTypes\\NumericTypes.csproj"
             },
-            "/mnt/d/dotnet/4_SartlarVeDonguler/SartlarVeDonguler.csproj": {
-              "projectPath": "/mnt/d/dotnet/4_SartlarVeDonguler/SartlarVeDonguler.csproj"
+            "D:\\dotnet\\4_SartlarVeDonguler\\SartlarVeDonguler.csproj": {
+              "projectPath": "D:\\dotnet\\4_SartlarVeDonguler\\SartlarVeDonguler.csproj"
             },
-            "/mnt/d/dotnet/5_ListCollections/ListCollections.csproj": {
-              "projectPath": "/mnt/d/dotnet/5_ListCollections/ListCollections.csproj"
+            "D:\\dotnet\\5_ListCollections\\ListCollections.csproj": {
+              "projectPath": "D:\\dotnet\\5_ListCollections\\ListCollections.csproj"
             }
           }
         }
@@ -164,7 +164,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/home/musta/.dotnet/sdk/9.0.306/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

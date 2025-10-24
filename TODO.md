@@ -1,198 +1,401 @@
-# TODO
-
-- [x] Learn to manage data collections using List<T> in C# → `5_ListCollections`
-
----
-
-Learn to manage data collections using List<T> in C#
-07/10/2025
-This introductory tutorial provides an introduction to the C# language and the basics of the class.
-
-This tutorial teaches you C# interactively, using your browser to write C# code and see the results of compiling and running your code. It contains a series of lessons that create, modify, and explore collections and arrays. You work primarily with the List<T> class.
-
-A basic list example
- Tip
-
-When a code snippet block includes the "Run" button, that button opens the interactive window, or replaces the existing code in the interactive window. When the snippet doesn't include a "Run" button, you can copy the code and add it to the current interactive window.
-
-Run the following code in the interactive window. Replace <name> with your name and select Run:
+Deconstructing tuples and other types
+12/04/2024
+A tuple provides a lightweight way to retrieve multiple values from a method call. But once you retrieve the tuple, you have to handle its individual elements. Working on an element-by-element basis is cumbersome, as the following example shows. The QueryCityData method returns a three-tuple, and each of its elements is assigned to a variable in a separate operation.
 
 C#
 
 Copy
-
-Run
-List<string> names = ["<name>", "Ana", "Felipe"];
-foreach (var name in names)
+public class Example
 {
-    Console.WriteLine($"Hello {name.ToUpper()}!");
+    public static void Main()
+    {
+        var result = QueryCityData("New York City");
+
+        var city = result.Item1;
+        var pop = result.Item2;
+        var size = result.Item3;
+
+         // Do something with the data.
+    }
+
+    private static (string, int, double) QueryCityData(string name)
+    {
+        if (name == "New York City")
+            return (name, 8175133, 468.48);
+
+        return ("", 0, 0);
+    }
 }
-You created a list of strings, added three names to that list, and printed the names in all CAPS. You're using concepts that you learned in earlier tutorials to loop through the list.
+Retrieving multiple field and property values from an object can be equally cumbersome: you must assign a field or property value to a variable on a member-by-member basis.
 
-The code to display names makes use of the string interpolation feature. When you precede a string with the $ character, you can embed C# code in the string declaration. The actual string replaces that C# code with the value it generates. In this example, it replaces the {name.ToUpper()} with each name, converted to capital letters, because you called the String.ToUpper method.
+You can retrieve multiple elements from a tuple or retrieve multiple field, property, and computed values from an object in a single deconstruct operation. To deconstruct a tuple, you assign its elements to individual variables. When you deconstruct an object, you assign selected values to individual variables.
 
-Let's keep exploring.
-
-Modify list contents
-The collection you created uses the List<T> type. This type stores sequences of elements. You specify the type of the elements between the angle brackets.
-
-One important aspect of this List<T> type is that it can grow or shrink, enabling you to add or remove elements. You can see the results by modifying the contents after you displayed its contents. Add the following code after the code you already wrote (the loop that prints the contents):
+Tuples
+C# features built-in support for deconstructing tuples, which lets you unpackage all the items in a tuple in a single operation. The general syntax for deconstructing a tuple is similar to the syntax for defining one: you enclose the variables to which each element is to be assigned in parentheses in the left side of an assignment statement. For example, the following statement assigns the elements of a four-tuple to four separate variables:
 
 C#
 
 Copy
-Console.WriteLine();
-names.Add("Maria");
-names.Add("Bill");
-names.Remove("Ana");
-foreach (var name in names)
-{
-    Console.WriteLine($"Hello {name.ToUpper()}!");
-}
-You added two more names to the end of the list. You also removed one as well. The output from this block of code shows the initial contents, then prints a blank line and the new contents.
+var (name, address, city, zip) = contact.GetAddressInfo();
+There are three ways to deconstruct a tuple:
 
-The List<T> enables you to reference individual items by index as well. You access items using the [ and ] tokens. Add the following code after what you already wrote and try it:
+You can explicitly declare the type of each field inside parentheses. The following example uses this approach to deconstruct the three-tuple returned by the QueryCityData method.
 
 C#
 
 Copy
-Console.WriteLine($"My name is {names[0]}.");
-Console.WriteLine($"I've added {names[2]} and {names[3]} to the list.");
-You're not allowed to access past the end of the list. You can check how long the list is using the Count property. Add the following code:
+public static void Main()
+{
+    (string city, int population, double area) = QueryCityData("New York City");
+
+    // Do something with the data.
+}
+You can use the var keyword so that C# infers the type of each variable. You place the var keyword outside of the parentheses. The following example uses type inference when deconstructing the three-tuple returned by the QueryCityData method.
 
 C#
 
 Copy
-Console.WriteLine($"The list has {names.Count} people in it");
-Select Run again to see the results. In C#, indices start at 0, so the largest valid index is one less than the number of items in the list.
+public static void Main()
+{
+    var (city, population, area) = QueryCityData("New York City");
 
-For more information about indices, see the Explore indexes and ranges article.
-
-Search and sort lists
-Our samples use relatively small lists, but your applications might often create lists with many more elements, sometimes numbering in the thousands. To find elements in these larger collections, you need to search the list for different items. The IndexOf method searches for an item and returns the index of the item. If the item isn't in the list, IndexOf returns -1. Try it to see how it works. Add the following code after what you wrote so far:
+    // Do something with the data.
+}
+You can also use the var keyword individually with any or all of the variable declarations inside the parentheses.
 
 C#
 
 Copy
-var index = names.IndexOf("Felipe");
-if (index == -1)
+public static void Main()
 {
-    Console.WriteLine($"When an item is not found, IndexOf returns {index}");
-}
-else
-{
-    Console.WriteLine($"The name {names[index]} is at index {index}");
-}
+    (string city, var population, var area) = QueryCityData("New York City");
 
-index = names.IndexOf("Not Found");
-if (index == -1)
-{
-    Console.WriteLine($"When an item is not found, IndexOf returns {index}");
+    // Do something with the data.
 }
-else
-{
-    Console.WriteLine($"The name {names[index]} is at index {index}");
-}
-You might not know if an item is in the list, so you should always check the index returned by IndexOf. If it's -1, the item wasn't found.
+The preceding example is cumbersome and isn't recommended.
 
-The items in your list can be sorted as well. The Sort method sorts all the items in the list in their normal order (alphabetically for strings). Add this code and run again:
+Lastly, you can deconstruct the tuple into variables already declared.
 
 C#
 
 Copy
-names.Sort();
-foreach (var name in names)
+public static void Main()
 {
-    Console.WriteLine($"Hello {name.ToUpper()}!");
+    string city = "Raleigh";
+    int population = 458880;
+    double area = 144.8;
+
+    (city, population, area) = QueryCityData("New York City");
+
+    // Do something with the data.
 }
-Lists of other types
-You've been using the string type in lists so far. Let's make a List<T> using a different type. Let's build a set of numbers. Delete the code you wrote so far, and replace it with the following code:
+You can mix variable declaration and assignment in a deconstruction.
 
 C#
 
 Copy
+public static void Main()
+{
+    string city = "Raleigh";
+    int population = 458880;
 
-Run
-List<int> fibonacciNumbers = [1, 1];
-That creates a list of integers, and sets the first two integers to the value 1. The Fibonacci Sequence, a sequence of numbers, starts with two 1's. Each next Fibonacci number is found by taking the sum of the previous two numbers. Add this code:
+    (city, population, double area) = QueryCityData("New York City");
+
+    // Do something with the data.
+}
+You can't specify a specific type outside the parentheses even if every field in the tuple has the same type. Doing so generates compiler error CS8136, "Deconstruction 'var (...)' form disallows a specific type for 'var'."
+
+You must assign each element of the tuple to a variable. If you omit any elements, the compiler generates error CS8132, "Can't deconstruct a tuple of 'x' elements into 'y' variables."
+
+Tuple elements with discards
+Often when deconstructing a tuple, you're interested in the values of only some elements. You can take advantage of C#'s support for discards, which are write-only variables whose values you chose to ignore. You declare a discard with an underscore character ("_") in an assignment. You can discard as many values as you like; a single discard, _, represents all the discarded values.
+
+The following example illustrates the use of tuples with discards. The QueryCityDataForYears method returns a six-tuple with the name of a city, its area, a year, the city's population for that year, a second year, and the city's population for that second year. The example shows the change in population between those two years. Of the data available from the tuple, we're unconcerned with the city area, and we know the city name and the two dates at design-time. As a result, we're only interested in the two population values stored in the tuple, and can handle its remaining values as discards.
 
 C#
 
 Copy
-var previous = fibonacciNumbers[fibonacciNumbers.Count - 1];
-var previous2 = fibonacciNumbers[fibonacciNumbers.Count - 2];
+using System;
 
-fibonacciNumbers.Add(previous + previous2);
-
-foreach (var item in fibonacciNumbers)
+public class ExampleDiscard
 {
-    Console.WriteLine(item);
+    public static void Main()
+    {
+        var (_, _, _, pop1, _, pop2) = QueryCityDataForYears("New York City", 1960, 2010);
+
+        Console.WriteLine($"Population change, 1960 to 2010: {pop2 - pop1:N0}");
+    }
+
+    private static (string, double, int, int, int, int) QueryCityDataForYears(string name, int year1, int year2)
+    {
+        int population1 = 0, population2 = 0;
+        double area = 0;
+
+        if (name == "New York City")
+        {
+            area = 468.48;
+            if (year1 == 1960)
+            {
+                population1 = 7781984;
+            }
+            if (year2 == 2010)
+            {
+                population2 = 8175133;
+            }
+            return (name, area, year1, population1, year2, population2);
+        }
+
+        return ("", 0, 0, 0, 0, 0);
+    }
 }
-Press Run to see the results.
+// The example displays the following output:
+//      Population change, 1960 to 2010: 393,149
+User-defined types
+C# offers built-in support for deconstructing tuple types, record, and DictionaryEntry types. However, as the author of a class, a struct, or an interface, you can allow instances of the type to be deconstructed by implementing one or more Deconstruct methods. The method returns void. An out parameter in the method signature represents each value to be deconstructed. For example, the following Deconstruct method of a Person class returns the first, middle, and family name:
 
-Challenge
-See if you can put together some of the concepts from this and earlier lessons. Expand on what you built so far with Fibonacci Numbers. Try to write the code to generate the first 20 numbers in the sequence. (As a hint, the 20th Fibonacci number is 6765.)
+C#
 
-Did you come up with something like this?
+Copy
+public void Deconstruct(out string fname, out string mname, out string lname)
+You can then deconstruct an instance of the Person class named p with an assignment like the following code:
 
-Details
-You completed the list interactive tutorial, the final introduction to C# interactive tutorial. You can visit the .NET site to download the .NET SDK, create a project on your machine, and keep coding. The "Next steps" section brings you back to these tutorials. Or, you can continue with the Explore object oriented programming with classes and objects tutorial.
+C#
 
-You can learn more about .NET collections in the following articles:
+Copy
+var (fName, mName, lName) = p;
+The following example overloads the Deconstruct method to return various combinations of properties of a Person object. Individual overloads return:
 
-Selecting a collection type
-Commonly used collection types
-When to use generic collections
- Collaborate with us on GitHub
-The source for this content can be found on GitHub, where you can also create and review issues and pull requests. For more information, see our contributor guide.
+A first and family name.
+A first, middle, and family name.
+A first name, a family name, a city name, and a state name.
+C#
 
-.NET feedback
+Copy
+using System;
 
-.NET is an open source project. Select a link to provide feedback:
+public class Person
+{
+    public string FirstName { get; set; }
+    public string MiddleName { get; set; }
+    public string LastName { get; set; }
+    public string City { get; set; }
+    public string State { get; set; }
 
- Open a documentation issue
- Provide product feedback
-Additional resources
-Documentation
+    public Person(string fname, string mname, string lname,
+                  string cityName, string stateName)
+    {
+        FirstName = fname;
+        MiddleName = mname;
+        LastName = lname;
+        City = cityName;
+        State = stateName;
+    }
 
-Branches and loops - Introductory tutorial - A tour of C#
+    // Return the first and last name.
+    public void Deconstruct(out string fname, out string lname)
+    {
+        fname = FirstName;
+        lname = LastName;
+    }
 
-In this tutorial about branches and loops, you write C# code to explore the language syntax that supports conditional branches and loops to execute statements repeatedly. You write C# code and see the results of compiling and running your code directly in the browser.
+    public void Deconstruct(out string fname, out string mname, out string lname)
+    {
+        fname = FirstName;
+        mname = MiddleName;
+        lname = LastName;
+    }
 
-Pattern matching - A tour of C#
+    public void Deconstruct(out string fname, out string lname,
+                            out string city, out string state)
+    {
+        fname = FirstName;
+        lname = LastName;
+        city = City;
+        state = State;
+    }
+}
 
-In this tutorial about pattern matching, you use your browser to learn C# interactively. You're going to write C# code and see the results of compiling and running your code directly in the browser.
+public class ExampleClassDeconstruction
+{
+    public static void Main()
+    {
+        var p = new Person("John", "Quincy", "Adams", "Boston", "MA");
 
-Tuples and types - Introductory interactive tutorial - A tour of C#
+        // Deconstruct the person object.
+        var (fName, lName, city, state) = p;
+        Console.WriteLine($"Hello {fName} {lName} of {city}, {state}!");
+    }
+}
+// The example displays the following output:
+//    Hello John Adams of Boston, MA!
+Multiple Deconstruct methods having the same number of parameters are ambiguous. You must be careful to define Deconstruct methods with different numbers of parameters, or "arity". Deconstruct methods with the same number of parameters can't be distinguished during overload resolution.
 
-In this tutorial about creating types, you use your browser to learn C# interactively. You're going to write C# code and see the results of compiling and running your code directly in the browser.
+User-defined type with discards
+Just as you do with tuples, you can use discards to ignore selected items returned by a Deconstruct method. A variable named "_" represents a discard. A single deconstruction operation can include multiple discards.
 
-Show 5 more
-Training
+The following example deconstructs a Person object into four strings (the first and family names, the city, and the state) but discards the family name and the state.
 
-Module
+C#
 
-Implement Collection Types - Training
+Copy
+// Deconstruct the person object.
+var (fName, _, city, _) = p;
+Console.WriteLine($"Hello {fName} of {city}!");
+// The example displays the following output:
+//      Hello John of Boston!
+Deconstruction extension methods
+If you didn't author a class, struct, or interface, you can still deconstruct objects of that type by implementing one or more Deconstruct extension methods to return the values in which you're interested.
 
-Learn, to use C# tools for managing groups of objects dynamically, ensuring type safety and efficient data manipulation.
+The following example defines two Deconstruct extension methods for the System.Reflection.PropertyInfo class. The first returns a set of values that indicate the characteristics of the property. The second indicates the property's accessibility. Boolean values indicate whether the property has separate get and set accessors or different accessibility. If there's only one accessor or both the get and the set accessor have the same accessibility, the access variable indicates the accessibility of the property as a whole. Otherwise, the accessibility of the get and set accessors are indicated by the getAccess and setAccess variables.
 
-Certification
+C#
 
-Microsoft Certified: Azure Developer Associate - Certifications
+Copy
+using System;
+using System.Collections.Generic;
+using System.Reflection;
 
-Build end-to-end solutions in Microsoft Azure to create Azure Functions, implement and manage web apps, develop solutions utilizing Azure storage, and more.
+public static class ReflectionExtensions
+{
+    public static void Deconstruct(this PropertyInfo p, out bool isStatic,
+                                   out bool isReadOnly, out bool isIndexed,
+                                   out Type propertyType)
+    {
+        var getter = p.GetMethod;
 
-Events
+        // Is the property read-only?
+        isReadOnly = ! p.CanWrite;
 
-.NET Conf 2025
+        // Is the property instance or static?
+        isStatic = getter.IsStatic;
 
-Oct 24, 6 PM - Oct 24, 6 PM
+        // Is the property indexed?
+        isIndexed = p.GetIndexParameters().Length > 0;
 
-.NET 10 launches at .NET Conf 2025! Tune in with the .NET community to celebrate and learn about the new release on November 11 - 13.
+        // Get the property type.
+        propertyType = p.PropertyType;
+    }
 
-Save the date
-# TODO
+    public static void Deconstruct(this PropertyInfo p, out bool hasGetAndSet,
+                                   out bool sameAccess, out string access,
+                                   out string getAccess, out string setAccess)
+    {
+        hasGetAndSet = sameAccess = false;
+        string getAccessTemp = null;
+        string setAccessTemp = null;
 
-- [x] Learn to manage data collections using List<T> in C# → `5_ListCollections`
+        MethodInfo getter = null;
+        if (p.CanRead)
+            getter = p.GetMethod;
 
----
+        MethodInfo setter = null;
+        if (p.CanWrite)
+            setter = p.SetMethod;
+
+        if (setter != null && getter != null)
+            hasGetAndSet = true;
+
+        if (getter != null)
+        {
+            if (getter.IsPublic)
+                getAccessTemp = "public";
+            else if (getter.IsPrivate)
+                getAccessTemp = "private";
+            else if (getter.IsAssembly)
+                getAccessTemp = "internal";
+            else if (getter.IsFamily)
+                getAccessTemp = "protected";
+            else if (getter.IsFamilyOrAssembly)
+                getAccessTemp = "protected internal";
+        }
+
+        if (setter != null)
+        {
+            if (setter.IsPublic)
+                setAccessTemp = "public";
+            else if (setter.IsPrivate)
+                setAccessTemp = "private";
+            else if (setter.IsAssembly)
+                setAccessTemp = "internal";
+            else if (setter.IsFamily)
+                setAccessTemp = "protected";
+            else if (setter.IsFamilyOrAssembly)
+                setAccessTemp = "protected internal";
+        }
+
+        // Are the accessibility of the getter and setter the same?
+        if (setAccessTemp == getAccessTemp)
+        {
+            sameAccess = true;
+            access = getAccessTemp;
+            getAccess = setAccess = String.Empty;
+        }
+        else
+        {
+            access = null;
+            getAccess = getAccessTemp;
+            setAccess = setAccessTemp;
+        }
+    }
+}
+
+public class ExampleExtension
+{
+    public static void Main()
+    {
+        Type dateType = typeof(DateTime);
+        PropertyInfo prop = dateType.GetProperty("Now");
+        var (isStatic, isRO, isIndexed, propType) = prop;
+        Console.WriteLine($"\nThe {dateType.FullName}.{prop.Name} property:");
+        Console.WriteLine($"   PropertyType: {propType.Name}");
+        Console.WriteLine($"   Static:       {isStatic}");
+        Console.WriteLine($"   Read-only:    {isRO}");
+        Console.WriteLine($"   Indexed:      {isIndexed}");
+
+        Type listType = typeof(List<>);
+        prop = listType.GetProperty("Item",
+                                    BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Static);
+        var (hasGetAndSet, sameAccess, accessibility, getAccessibility, setAccessibility) = prop;
+        Console.Write($"\nAccessibility of the {listType.FullName}.{prop.Name} property: ");
+
+        if (!hasGetAndSet | sameAccess)
+        {
+            Console.WriteLine(accessibility);
+        }
+        else
+        {
+            Console.WriteLine($"\n   The get accessor: {getAccessibility}");
+            Console.WriteLine($"   The set accessor: {setAccessibility}");
+        }
+    }
+}
+// The example displays the following output:
+//       The System.DateTime.Now property:
+//          PropertyType: DateTime
+//          Static:       True
+//          Read-only:    True
+//          Indexed:      False
+//
+//       Accessibility of the System.Collections.Generic.List`1.Item property: public
+Extension method for system types
+Some system types provide the Deconstruct method as a convenience. For example, the System.Collections.Generic.KeyValuePair<TKey,TValue> type provides this functionality. When you're iterating over a System.Collections.Generic.Dictionary<TKey,TValue>, each element is a KeyValuePair<TKey, TValue> and can be deconstructed. Consider the following example:
+
+C#
+
+Copy
+Dictionary<string, int> snapshotCommitMap = new(StringComparer.OrdinalIgnoreCase)
+{
+    ["https://github.com/dotnet/docs"] = 16_465,
+    ["https://github.com/dotnet/runtime"] = 114_223,
+    ["https://github.com/dotnet/installer"] = 22_436,
+    ["https://github.com/dotnet/roslyn"] = 79_484,
+    ["https://github.com/dotnet/aspnetcore"] = 48_386
+};
+
+foreach (var (repo, commitCount) in snapshotCommitMap)
+{
+    Console.WriteLine(
+        $"The {repo} repository had {commitCount:N0} commits as of November 10th, 2021.");
+}
+record types
+When you declare a record type by using two or more positional parameters, the compiler creates a Deconstruct method with an out parameter for each positional parameter in the record declaration. For more information, see Positional syntax for property definition and Deconstructor behavior in derived records.
