@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using D1_RecordTypesNamespace;
+using D2_StringVeTextNamespace;
+using D3_NumericTypesNamespace;
 
 namespace DotnetPlayground;
 
@@ -9,7 +11,9 @@ internal static class Program
     private static readonly IReadOnlyList<(string Key, string Title, Action Run)> Topics =
         new List<(string Key, string Title, Action Run)>
         {
-            ("1", "Record Types", RecordTypesTopic.Run)
+            ("1", "Record-Typen", RecordTypesTopic.Run),
+            ("2", "String und Text", StringVeTextTopic.Run),
+            ("3", "Zahlen und numerische Typen", NumericTypesTopic.Run)
         };
 
     private static void Main(string[] args)
@@ -32,14 +36,14 @@ internal static class Program
 
     private static void ShowMenu()
     {
-        Console.WriteLine("=== .NET Konu Demoları ===");
+        Console.WriteLine("=== .NET Themen-Demos ===");
         foreach (var (key, title, _) in Topics)
         {
             Console.WriteLine($"{key}. {title}");
         }
 
         Console.WriteLine();
-        Console.Write("Çalıştırmak istediğiniz konunun numarasını girin (çıkmak için Q): ");
+        Console.Write("Geben Sie die Nummer des gewünschten Themas ein (zum Beenden Q): ");
     }
 
     private static void ExecuteTopic(string key)
@@ -57,6 +61,6 @@ internal static class Program
             return;
         }
 
-        Console.WriteLine("Geçersiz seçim. Menüden bir numara seçin.");
+        Console.WriteLine("Ungültige Auswahl. Bitte wählen Sie eine Nummer aus dem Menü.");
     }
 }

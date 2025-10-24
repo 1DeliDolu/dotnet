@@ -8,15 +8,33 @@
     ".NETCoreApp,Version=v9.0": {
       "DotnetPlayground/1.0.0": {
         "dependencies": {
-          "RecordTypes": "1.0.0"
+          "NumericTypes": "1.0.0",
+          "RecordTypes": "1.0.0",
+          "StringVeText": "1.0.0"
         },
         "runtime": {
           "DotnetPlayground.dll": {}
         }
       },
+      "NumericTypes/1.0.0": {
+        "runtime": {
+          "NumericTypes.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "RecordTypes/1.0.0": {
         "runtime": {
           "RecordTypes.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "StringVeText/1.0.0": {
+        "runtime": {
+          "StringVeText.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -30,7 +48,17 @@
       "serviceable": false,
       "sha512": ""
     },
+    "NumericTypes/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "RecordTypes/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "StringVeText/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -7,8 +7,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Remove="1_RecordTypes/**/*.cs" />
+    <Compile Remove="2_StringVeText/**/*.cs" />
+    <Compile Remove="3_NumericTypes/**/*.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="1_RecordTypes/RecordTypes.csproj" />
+    <ProjectReference Include="2_StringVeText/StringVeText.csproj" />
+    <ProjectReference Include="3_NumericTypes/NumericTypes.csproj" />
   </ItemGroup>
 </Project>

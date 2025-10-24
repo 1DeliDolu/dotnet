@@ -36,3 +36,7 @@ D:/dotnet/obj/Debug/net9.0/ref/DotnetPlayground.dll
 /mnt/d/dotnet/obj/Debug/net9.0/DotnetPlayground.pdb
 /mnt/d/dotnet/obj/Debug/net9.0/DotnetPlayground.genruntimeconfig.cache
 /mnt/d/dotnet/obj/Debug/net9.0/ref/DotnetPlayground.dll
+/mnt/d/dotnet/bin/Debug/net9.0/StringVeText.dll
+/mnt/d/dotnet/bin/Debug/net9.0/StringVeText.pdb
+/mnt/d/dotnet/bin/Debug/net9.0/NumericTypes.dll
+/mnt/d/dotnet/bin/Debug/net9.0/NumericTypes.pdb

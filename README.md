@@ -1,6 +1,8 @@
 # Lernpfad: Einfache .NET-Anwendung
 
 1. [Record-Typen in C#](1_RecordTypes/README.md)
+2. [String ve Text](2_StringVeText/README.md)
+3. [Sayılar ve Numerik Türler](3_NumericTypes/README.md)
 
 ## WSL 2 ile çalıştırma
 

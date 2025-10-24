@@ -4,6 +4,10 @@ VisualStudioVersion = 17.5.2.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecordTypes", "1_RecordTypes\RecordTypes.csproj", "{261162E4-973F-388A-0F79-FBBE09B6FAFC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringVeText", "2_StringVeText\StringVeText.csproj", "{C3AB8E85-9D66-45F9-8390-D6349911E8C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NumericTypes", "3_NumericTypes\NumericTypes.csproj", "{4D6F4EE7-5DAA-4CA6-8BE5-4BB5AC8FAEFA}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotnetPlayground", "DotnetPlayground.csproj", "{3234A00F-EB80-430E-873D-0FD00653C36F}"
 EndProject
 Global
@@ -16,6 +20,14 @@ Global
 		{261162E4-973F-388A-0F79-FBBE09B6FAFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{261162E4-973F-388A-0F79-FBBE09B6FAFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{261162E4-973F-388A-0F79-FBBE09B6FAFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3AB8E85-9D66-45F9-8390-D6349911E8C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3AB8E85-9D66-45F9-8390-D6349911E8C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3AB8E85-9D66-45F9-8390-D6349911E8C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3AB8E85-9D66-45F9-8390-D6349911E8C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D6F4EE7-5DAA-4CA6-8BE5-4BB5AC8FAEFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D6F4EE7-5DAA-4CA6-8BE5-4BB5AC8FAEFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D6F4EE7-5DAA-4CA6-8BE5-4BB5AC8FAEFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D6F4EE7-5DAA-4CA6-8BE5-4BB5AC8FAEFA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3234A00F-EB80-430E-873D-0FD00653C36F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3234A00F-EB80-430E-873D-0FD00653C36F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3234A00F-EB80-430E-873D-0FD00653C36F}.Release|Any CPU.ActiveCfg = Release|Any CPU

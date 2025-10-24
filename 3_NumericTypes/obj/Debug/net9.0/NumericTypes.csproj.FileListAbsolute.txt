@@ -1,0 +1,12 @@
+/mnt/d/dotnet/3_NumericTypes/bin/Debug/net9.0/NumericTypes.deps.json
+/mnt/d/dotnet/3_NumericTypes/bin/Debug/net9.0/NumericTypes.dll
+/mnt/d/dotnet/3_NumericTypes/bin/Debug/net9.0/NumericTypes.pdb
+/mnt/d/dotnet/3_NumericTypes/obj/Debug/net9.0/NumericTypes.GeneratedMSBuildEditorConfig.editorconfig
+/mnt/d/dotnet/3_NumericTypes/obj/Debug/net9.0/NumericTypes.AssemblyInfoInputs.cache
+/mnt/d/dotnet/3_NumericTypes/obj/Debug/net9.0/NumericTypes.AssemblyInfo.cs
+/mnt/d/dotnet/3_NumericTypes/obj/Debug/net9.0/NumericTypes.csproj.CoreCompileInputs.cache
+/mnt/d/dotnet/3_NumericTypes/obj/Debug/net9.0/NumericTypes.sourcelink.json
+/mnt/d/dotnet/3_NumericTypes/obj/Debug/net9.0/NumericTypes.dll
+/mnt/d/dotnet/3_NumericTypes/obj/Debug/net9.0/refint/NumericTypes.dll
+/mnt/d/dotnet/3_NumericTypes/obj/Debug/net9.0/NumericTypes.pdb
+/mnt/d/dotnet/3_NumericTypes/obj/Debug/net9.0/ref/NumericTypes.dll
