@@ -1,0 +1,95 @@
+# Visual Studio / C# .gitignore
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.DotSettings.user
+
+# Build results
+[Bb]in/
+[Oo]bj/
+out/
+publish/
+artifacts/
+
+# Visual Studio Code
+.vscode/
+
+# Visual Studio workspace
+.vs/
+
+# Rider
+.idea/
+*.sln.iml
+*.DotSettings
+
+# NuGet
+*.nupkg
+packages/
+project.lock.json
+project.fragment.lock.json
+.nuget/
+.nuget/packages/
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# Entity Framework / Database files
+*.dbmdl
+*.mdf
+*.ldf
+
+# Test Results
+TestResults/
+*.trx
+*.coverage
+*.coveragexml
+
+# DotCover
+*.dotCover
+
+# ReSharper
+_ReSharper*/
+*.DotSettings
+
+# Rider caches
+.idea/
+
+# Mono
+*.pidb
+*.svclog
+
+# OS generated files
+Thumbs.db
+Desktop.ini
+ehthumbs.db
+Icon?
+.DS_Store
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+*.bak
+*.swp
+*.swo
+
+# Packages and dependencies
+node_modules/
+bower_components/
+*.cache
+
+# Publish / deployment
+*.Publish.xml
+*.azurePubxml
+wwwroot/dist/
+dist/
+
+# Misc
+*.db
+*.sqlite
+*.sqlite3
+*.vsix
