@@ -135,3 +135,7 @@ PS D:\LibraryApp>
 code .
 ````
 
+````bash 
+dotnet new console -o TestProject
+
+````
