@@ -1,0 +1,12 @@
+/mnt/d/dotnet/4_SartlarVeDonguler/bin/Debug/net9.0/SartlarVeDonguler.deps.json
+/mnt/d/dotnet/4_SartlarVeDonguler/bin/Debug/net9.0/SartlarVeDonguler.dll
+/mnt/d/dotnet/4_SartlarVeDonguler/bin/Debug/net9.0/SartlarVeDonguler.pdb
+/mnt/d/dotnet/4_SartlarVeDonguler/obj/Debug/net9.0/SartlarVeDonguler.GeneratedMSBuildEditorConfig.editorconfig
+/mnt/d/dotnet/4_SartlarVeDonguler/obj/Debug/net9.0/SartlarVeDonguler.AssemblyInfoInputs.cache
+/mnt/d/dotnet/4_SartlarVeDonguler/obj/Debug/net9.0/SartlarVeDonguler.AssemblyInfo.cs
+/mnt/d/dotnet/4_SartlarVeDonguler/obj/Debug/net9.0/SartlarVeDonguler.csproj.CoreCompileInputs.cache
+/mnt/d/dotnet/4_SartlarVeDonguler/obj/Debug/net9.0/SartlarVeDonguler.sourcelink.json
+/mnt/d/dotnet/4_SartlarVeDonguler/obj/Debug/net9.0/SartlarVeDonguler.dll
+/mnt/d/dotnet/4_SartlarVeDonguler/obj/Debug/net9.0/refint/SartlarVeDonguler.dll
+/mnt/d/dotnet/4_SartlarVeDonguler/obj/Debug/net9.0/SartlarVeDonguler.pdb
+/mnt/d/dotnet/4_SartlarVeDonguler/obj/Debug/net9.0/ref/SartlarVeDonguler.dll

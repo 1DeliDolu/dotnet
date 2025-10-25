@@ -1,0 +1,12 @@
+/mnt/d/dotnet/5_ListCollections/bin/Debug/net9.0/ListCollections.deps.json
+/mnt/d/dotnet/5_ListCollections/bin/Debug/net9.0/ListCollections.dll
+/mnt/d/dotnet/5_ListCollections/bin/Debug/net9.0/ListCollections.pdb
+/mnt/d/dotnet/5_ListCollections/obj/Debug/net9.0/ListCollections.GeneratedMSBuildEditorConfig.editorconfig
+/mnt/d/dotnet/5_ListCollections/obj/Debug/net9.0/ListCollections.AssemblyInfoInputs.cache
+/mnt/d/dotnet/5_ListCollections/obj/Debug/net9.0/ListCollections.AssemblyInfo.cs
+/mnt/d/dotnet/5_ListCollections/obj/Debug/net9.0/ListCollections.csproj.CoreCompileInputs.cache
+/mnt/d/dotnet/5_ListCollections/obj/Debug/net9.0/ListCollections.sourcelink.json
+/mnt/d/dotnet/5_ListCollections/obj/Debug/net9.0/ListCollections.dll
+/mnt/d/dotnet/5_ListCollections/obj/Debug/net9.0/refint/ListCollections.dll
+/mnt/d/dotnet/5_ListCollections/obj/Debug/net9.0/ListCollections.pdb
+/mnt/d/dotnet/5_ListCollections/obj/Debug/net9.0/ref/ListCollections.dll

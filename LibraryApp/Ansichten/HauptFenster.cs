@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using LibraryApp.Modelle;
@@ -20,6 +21,7 @@ public partial class HauptFenster : Form
     private void HauptFenster_Load(object? sender, EventArgs e)
     {
         ZeigeBuecher(steuerung.BuecherListe());
+        StyleDataGrid();
     }
 
     private void btnHinzufuegen_Click(object? sender, EventArgs e)
@@ -80,6 +82,16 @@ public partial class HauptFenster : Form
     {
         dgvBuecher.DataSource = null;
         dgvBuecher.DataSource = daten;
+    }
+
+    private void StyleDataGrid()
+    {
+        dgvBuecher.EnableHeadersVisualStyles = false;
+        dgvBuecher.ColumnHeadersDefaultCellStyle.BackColor = Color.SteelBlue;
+        dgvBuecher.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+        dgvBuecher.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+        dgvBuecher.DefaultCellStyle.SelectionBackColor = Color.FromArgb(176, 196, 222);
+        dgvBuecher.DefaultCellStyle.SelectionForeColor = Color.Black;
     }
 
     private void btnBildWaehlen_Click(object? sender, EventArgs e)
