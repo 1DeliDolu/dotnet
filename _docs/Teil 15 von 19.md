@@ -28,6 +28,60 @@ Bu bölümde LINQ'un ne olduğu, `IEnumerable`/`IQueryable` farkları, sorgu (qu
 	- Aggregation: `Count`, `Sum`, `Min`, `Max`, `Average`, `Aggregate`
 	- Partitioning: `Skip`, `Take`, `TakeWhile`, `SkipWhile`
 
+    
+| Standard query operator | Return type | Immediate execution | Deferred streaming execution | Deferred nonstreaming execution |
+|------------------------|-------------|---------------------|------------------------------|---------------------------------|
+| Aggregate              | TSource     | ✓                   |                              |                                 |
+| All                    | Boolean     | ✓                   |                              |                                 |
+| Any                    | Boolean     | ✓                   |                              |                                 |
+| AsEnumerable           | IEnumerable<T> |                   | ✓                            |                                 |
+| Average                | Single numeric value | ✓          |                              |                                 |
+| Cast                   | IEnumerable<T> |                   | ✓                            |                                 |
+| Concat                 | IEnumerable<T> |                   | ✓                            |                                 |
+| Contains               | Boolean     | ✓                   |                              |                                 |
+| Count                  | Int32       | ✓                   |                              |                                 |
+| DefaultIfEmpty         | IEnumerable<T> |                   | ✓                            |                                 |
+| Distinct               | IEnumerable<T> |                   | ✓                            |                                 |
+| ElementAt              | TSource     | ✓                   |                              |                                 |
+| ElementAtOrDefault     | TSource?    | ✓                   |                              |                                 |
+| Empty                  | IEnumerable<T> | ✓                 |                              |                                 |
+| Except                 | IEnumerable<T> |                   | ✓                            | ✓                               |
+| First                  | TSource     | ✓                   |                              |                                 |
+| FirstOrDefault         | TSource?    | ✓                   |                              |                                 |
+| GroupBy                | IEnumerable<T> |                   |                              | ✓                               |
+| GroupJoin              | IEnumerable<T> |                   | ✓                            | ✓                               |
+| Intersect              | IEnumerable<T> |                   | ✓                            | ✓                               |
+| Join                   | IEnumerable<T> |                   | ✓                            | ✓                               |
+| Last                   | TSource     | ✓                   |                              |                                 |
+| LastOrDefault          | TSource?    | ✓                   |                              |                                 |
+| LongCount              | Int64       | ✓                   |                              |                                 |
+| Max                    | Single numeric value, TSource, or TResult? | ✓ |                 |                                 |
+| Min                    | Single numeric value, TSource, or TResult? | ✓ |                 |                                 |
+| OfType                 | IEnumerable<T> |                   | ✓                            |                                 |
+| OrderBy                | IOrderedEnumerable<TElement> |       |                              | ✓                               |
+| OrderByDescending      | IOrderedEnumerable<TElement> |       |                              | ✓                               |
+| Range                  | IEnumerable<T> |                   | ✓                            |                                 |
+| Repeat                 | IEnumerable<T> |                   | ✓                            |                                 |
+| Reverse                | IEnumerable<T> |                   |                              | ✓                               |
+| Select                 | IEnumerable<T> |                   | ✓                            |                                 |
+| SelectMany             | IEnumerable<T> |                   | ✓                            |                                 |
+| SequenceEqual          | Boolean     | ✓                   |                              |                                 |
+| Single                 | TSource     | ✓                   |                              |                                 |
+| SingleOrDefault        | TSource?    | ✓                   |                              |                                 |
+| Skip                   | IEnumerable<T> |                   | ✓                            |                                 |
+| SkipWhile              | IEnumerable<T> |                   | ✓                            |                                 |
+| Sum                    | Single numeric value | ✓           |                              |                                 |
+| Take                   | IEnumerable<T> |                   | ✓                            |                                 |
+| TakeWhile              | IEnumerable<T> |                   | ✓                            |                                 |
+| ThenBy                 | IOrderedEnumerable<TElement> |      |                              | ✓                               |
+| ThenByDescending       | IOrderedEnumerable<TElement> |      |                              | ✓                               |
+| ToArray                | TSource[] array | ✓               |                              |                                 |
+| ToDictionary           | Dictionary<TKey,TValue> | ✓        |                              |                                 |
+| ToList                 | IList<T>    | ✓                   |                              |                                 |
+| ToLookup               | ILookup<TKey,TElement> | ✓         |                              |                                 |
+| Union                  | IEnumerable<T> |                   | ✓                            |                                 |
+| Where                  | IEnumerable<T> |                   | ✓                            |                                 |
+
 - Query expression vs method chain
 	- Açıklama: İkisi aynı işi yapar; query syntax bazı karmaşık grup ve join işlemlerinde daha okunaklı olabilir, method syntax ise extension metodlarla daha sık kullanılır.
 	- Örnek (aynı işi yapan iki yazım):
